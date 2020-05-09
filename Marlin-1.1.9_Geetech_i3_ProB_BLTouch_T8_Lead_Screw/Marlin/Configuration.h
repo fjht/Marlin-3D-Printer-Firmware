@@ -716,7 +716,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-//#define FIX_MOUNTED_PROBE
+#define FIX_MOUNTED_PROBE
 
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
@@ -727,10 +727,10 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH
-#if ENABLED(BLTOUCH)
-  #define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
-#endif
+// #define BLTOUCH
+// #if ENABLED(BLTOUCH)
+//   #define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
+// #endif
 
 /**
  * Enable one or more of the following if probing seems unreliable.
@@ -776,8 +776,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -40  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -25  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -40  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.9  // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
@@ -1025,9 +1025,9 @@
 
   // Set the boundaries for probing (where the probe can reach).
   #define LEFT_PROBE_BED_POSITION 10
-  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE - X_PROBE_OFFSET_FROM_EXTRUDER) 
+  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE - X_PROBE_OFFSET_FROM_EXTRUDER)
   #define FRONT_PROBE_BED_POSITION 10
-  //#define BACK_PROBE_BED_POSITION 143 
+  //#define BACK_PROBE_BED_POSITION 143
   #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE + Y_PROBE_OFFSET_FROM_EXTRUDER -3)
 
   // Probe along the Y axis, advancing X after each column
